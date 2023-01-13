@@ -54,3 +54,57 @@ type Project struct {
 	SSHURL            string `json:"ssh_url"`
 	HTTPURL           string `json:"http_url"`
 }
+
+type Label struct {
+	ID          int32     `json:"id"`
+	Title       string    `json:"title"`
+	Color       string    `json:"color"`
+	ProjectID   int32     `json:"project_id"`
+	CreatedAt   time.Time `json:"created_at"`
+	UpdatedAt   time.Time `json:"updated_at"`
+	Template    bool      `json:"template"`
+	Description string    `json:"description"`
+	Type        string    `json:"type"`
+	GroupID     int32     `json:"group_id"`
+}
+
+type ObjectAttributes struct {
+	ID                  int32     `json:"name"`
+	Title               string    `json:"title"`
+	AssigneeIDs         []int32   `json:"assignee_ids"`
+	AssigneeID          int32     `json:"assignee_id"`
+	AuthorID            int32     `json:"author_id"`
+	ProjectID           int32     `json:"project_id"`
+	CreatedAt           time.Time `json:"created_at"`
+	UpdatedAt           time.Time `json:"updated_at"`
+	UpdatedByID         int32     `json:"updated_by_id"`
+	LastEditedAt        time.Time `json:"last_edited_at"`
+	LastEditedByID      int32     `json:"last_edited_by_id"`
+	RelativePostion     int32     `json:"relative_position"`
+	Description         string    `json:"description"`
+	MilestoneID         int32     `json:"milestone_id"`
+	StateID             int32     `json:"state_id"`
+	Confidential        bool      `json:"confidential"`
+	DiscussionLocked    bool      `json:"discussion_locked"`
+	DueDate             time.Time `json:"due_date"`
+	MovedToID           int32     `json:"moved_to_id"`
+	DuplicatedToID      int32     `json:"duplicated_to_id"`
+	TimeEstimate        int32     `json:"time_estimate"`
+	TotalTimeSpent      int32     `json:"total_time_spent"`
+	TimeChange          int32     `json:"time_change"`
+	HumanTotalTimeSpent *string   `json:"human_total_time_spent"`
+	HumanTimeEstimate   *string   `json:"human_time_estimate"`
+	HumanTimeChange     *string   `json:"human_time_change"`
+	Weight              *int32    `json:"weight"`
+	IID                 int32     `json:"iid"`
+	URL                 string    `json:"url"`
+	State               string    `json:"state"`
+	Action              string    `json:"action"`
+	Serverity           string    `json:"serverity"`
+	EscalationStatus    string    `json:"escalation_status"`
+	EscalationPolicy    struct {
+		ID   int32  `json:"id"`
+		Name string `json:"name"`
+	} `json:"escalation_policy"`
+	Labels []Label `json:"labels"`
+}
