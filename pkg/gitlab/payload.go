@@ -1,4 +1,4 @@
-package schema
+package gitlab
 
 type PushEventPayload struct {
 	ObjectKind        string     `json:"object_kind"`

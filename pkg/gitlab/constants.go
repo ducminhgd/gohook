@@ -1,4 +1,4 @@
-package schema
+package gitlab
 
 type Event string
 
