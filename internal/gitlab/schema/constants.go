@@ -29,4 +29,26 @@ const (
 	ObjectKindJob          string = ObjectKindBuild
 	ObjectKindDeployment   string = "deployment"
 	ObjectKindFeatureFlag  string = "feature_flag"
+
+	IssueStateOpened string = "opened"
+	IssueStateClosed string = "closed"
+	IssueStateLocked string = "locked"
+	IssueStateMerged string = "merged"
+	IssueStateAll    string = "all"
+
+	MRStateOpened string = "opened"
+	MRStateClosed string = "closed"
+	MRStateLocked string = "locked"
+	MRStateMerged string = "merged"
+	MRStateAll    string = "all"
+
+	MRStatusUnchecked             string = "unchecked"
+	MRStatusChecking              string = "checking"
+	MRStatusCanBeMerged           string = "can_be_merged"
+	MRStatusCannotBeMerged        string = "cannot_be_merged"
+	MRStatusCannotBeMergedRecheck string = "cannot_be_merged_recheck"
+
+	MemberEventAdd    string = "user_add_to_group"
+	MemberEventUpdate string = "user_update_for_group"
+	MemberEventDelete string = "user_remove_from_group"
 )
