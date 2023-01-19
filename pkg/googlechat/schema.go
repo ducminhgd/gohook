@@ -72,17 +72,17 @@ type Section struct {
 }
 
 type DecoratedText struct {
-	StartIcon   Icon
-	TopLabel    string
-	Text        string
-	WrapText    bool
-	BottomLabel string
-	OnClick     OnClick
+	StartIcon   Icon    `json:"startIcon"`
+	TopLabel    string  `json:"topLabel"`
+	Text        string  `json:"text"`
+	WrapText    bool    `json:"wrapText"`
+	BottomLabel string  `json:"bottomLabel"`
+	OnClick     OnClick `json:"onClick"`
 
 	// Union field control can be only one of the following:
-	Button        Button
-	SwitchControl SwitchControl
-	EndIcon       Icon
+	Button        Button        `json:"button"`
+	SwitchControl SwitchControl `json:"switchControl"`
+	EndIcon       Icon          `json:"endIcon"`
 	// End of list of possible types for union field control.
 }
 
@@ -96,11 +96,11 @@ type Button struct {
 }
 
 type SwitchControl struct {
-	Name           string
-	Value          string
-	Selected       bool
-	OnChangeAction Action
-	ControlType    string
+	Name           string `json:"name"`
+	Value          string `json:"value"`
+	Selected       bool   `json:"selected"`
+	OnChangeAction Action `json:"onChangeAction"`
+	ControlType    string `json:"controlType"`
 }
 
 type Color struct {
@@ -121,8 +121,26 @@ type Icon struct {
 }
 
 type Widget struct {
+	CardID string `json:"cardId"`
+	Card   Card   `json:"card"`
 }
 
 type Card struct {
-	// TODO: need defining
+	Header      CardHeader   `json:"header"`
+	Sections    []Section    `json:"sections"`
+	CardActions []CardAction `json:"cardActions"`
+	Name        string       `json:"name"`
+	// FixedFooter    CardFixedFooter `json:"fixedFooter"`
+	DisplayStyle   string     `json:"displayStyle"`
+	PeekCardHeader CardHeader `json:"peekCardHeader"`
 }
+
+type CardAction struct {
+	Name    string  `json:"name"`
+	OnClick OnClick `json:"onClick"`
+}
+
+// type CardFixedFooter struct {
+// 	PrimaryButton   Button `json:"primaryButton"`
+// 	SecondaryButton Button `json:"secondaryButton"`
+// }
